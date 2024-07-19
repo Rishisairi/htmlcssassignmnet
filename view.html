@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        color: #333;
+        background-color: #f8f8f8;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        align-items: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline;
+        margin-right: 10px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      .img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 20px auto; /* Center image with margin */
+      }
+
+      .red {
+        background: crimson;
+        width: 140px;
+        height: 70px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto; /* Center red box */
+      }
+
+      .new {
+        background: grey;
+        padding: 20px;
+        margin: 20px;
+        text-align: center;
+      }
+
+      .whole {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .image1,
+      .image2,
+      .image3 {
+        background: #fff;
+        padding: 20px;
+        margin: 0 auto 20px;
+        max-width: 100%;
+      }
+
+      .image1 img,
+      .image2 img,
+      .image3 img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">Popular</a></li>
+        <li><a href="#">Trending</a></li>
+        <li><a href="#">Categories</a></li>
+      </ul>
+    </nav>
+    <img class="img" src="assets\images\image-web-3-mobile.jpg" />
+    <h1>The Bright Future of Web 3.0?</h1>
+    <h3>
+      We dive into the next evolution of the web that claims to put the power of
+      the platforms back into the hands of the people. But is it really
+      fulfilling its promise?
+    </h3>
+    <div class="red">
+      <h2>Read More</h2>
+    </div>
+
+    <div class="new">
+      <h1>New</h1>
+
+      <div class="news-item">
+        <h2>Hydrogen VS Electric Cars</h2>
+        <h3>Will hydrogen-fueled cars ever catch up to EVs?</h3>
+      </div>
+
+      <div class="news-item">
+        <h2>The Downsides of AI Artistry</h2>
+        <h3>
+          What are the possible adverse effects of on-demand AI image
+          generation?
+        </h3>
+      </div>
+
+      <div class="news-item">
+        <h2>Is VC Funding Drying Up?</h2>
+        <h3>
+          Private funding by VC firms is down 50% YOY. We take a look at what
+          that means.
+        </h3>
+      </div>
+    </div>
+
+    <div class="whole">
+      <div class="image1">
+        <img src="assets\images\image-retro-pcs.jpg" />
+        <h1>01</h1>
+        <h2>Reviving Retro PCs</h2>
+        <h3>What happens when old PCs are given modern upgrades?</h3>
+      </div>
+
+      <div class="image2">
+        <img src="assets\images\image-top-laptops.jpg" />
+        <h1>02</h1>
+        <h2>Top 10 Laptops of 2022</h2>
+        <h3>Our best picks for various needs and budgets.</h3>
+      </div>
+
+      <div class="image3">
+        <img src="assets\images\image-gaming-growth.jpg" />
+        <h1>03</h1>
+        <h2>The Growth of Gaming</h2>
+        <h3>How the pandemic has sparked fresh opportunities.</h3>
+      </div>
+    </div>
+  </body>
+</html>
