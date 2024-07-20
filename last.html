@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        color: #333;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .container-main {
+        overflow: hidden;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .header-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-section img {
+        width: 50px;
+      }
+
+      .header-section nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      .menu-close,
+      .menu-button {
+        opacity: 0;
+      }
+
+      .content-main {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        gap: 20px;
+      }
+
+      hr {
+        margin: 30px 0;
+      }
+
+      .content-main .left-column {
+        width: 70%;
+      }
+
+      .content-main .left-column img {
+        width: 100%;
+        height: 40%;
+      }
+
+      .content-main .left-column .content-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+      }
+
+      .content-main .left-column .content-wrapper h1 {
+        width: 40%;
+        font-size: 3em;
+        color: black;
+        margin: 0;
+      }
+
+      .content-main .left-column .content-wrapper div {
+        width: 50%;
+      }
+
+      .content-main .left-column .content-wrapper p {
+        font-size: 1em;
+        margin: 10px 0;
+      }
+
+      .content-main .left-column .content-wrapper .read-more {
+        display: inline-block;
+        background-color: hsl(5, 85%, 63%);
+        color: black;
+        font-size: 15px;
+        letter-spacing: 0.3em;
+        padding: 15px 35px;
+        text-decoration: none;
+        margin-top: 10px;
+      }
+
+      .content-main .right-column h2 {
+        color: hsl(35, 77%, 62%);
+        font-size: 2em;
+        margin: 10px 0;
+      }
+
+      .content-main .right-column p {
+        color: white;
+        font-size: 0.8em;
+        margin: 10px 0;
+        opacity: 0.8;
+      }
+
+      .content-main .right-column {
+        width: 30%;
+        height: 72vh;
+        background-color: hsl(240, 100%, 5%);
+        color: white;
+        padding: 20px;
+      }
+
+      .bottom-section {
+        margin-top: -200px;
+        display: flex;
+      }
+
+      .bottom-section .item-section {
+        display: flex;
+      }
+
+      .bottom-section .item-section img {
+        width: 80px;
+        height: 120px;
+        margin-right: 10px;
+      }
+
+      .bottom-section .item-content {
+        margin-top: -20px;
+      }
+
+      .bottom-section .item-content h1 {
+        font-size: 1.8em;
+        color: hsl(5, 85%, 63%);
+      }
+
+      .bottom-section .item-content h2 {
+        font-size: 1em;
+        color: hsl(240, 100%, 5%);
+      }
+
+      .bottom-section .item-content p {
+        font-size: 1em;
+        margin: 10px 0;
+      }
+
+      @media (max-width: 800px) {
+        .menu-button {
+          opacity: 1;
+        }
+
+        .menu-button button {
+          outline: none;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+        }
+
+        .header-section img {
+          margin-bottom: 10px;
+        }
+
+        .content-main {
+          flex-direction: column;
+          margin: 10px 0;
+          gap: 0;
+        }
+
+        .content-main .left-column .content-wrapper h1 {
+          width: 100%;
+        }
+
+        .content-main .left-column .content-wrapper div {
+          width: 100%;
+        }
+
+        .content-main .left-column,
+        .content-main .right-column {
+          width: 100%;
+        }
+
+        .content-main .right-column {
+          margin-top: 50px;
+        }
+
+        .content-main .right-column p {
+          width: 90%;
+        }
+
+        .menu-close {
+          position: absolute;
+          right: 1%;
+          top: 0;
+          opacity: 1;
+          background: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .menu-close img {
+          width: 30px;
+          height: 30px;
+        }
+
+        .open-nav {
+          position: fixed;
+          background-color: white;
+          width: 40vw;
+          right: 0;
+          top: 0;
+          bottom: 50%;
+          opacity: 1;
+        }
+
+        .open-nav a {
+          padding: 1rem;
+          font-size: 1.2rem;
+        }
+
+        .open-nav {
+          position: absolute;
+          opacity: 0;
+          display: flex;
+          transition: all 0.3s ease-in-out;
+          flex-direction: column;
+          justify-content: center;
+        }
+
+        .bottom-section {
+          margin-top: 60px;
+          flex-direction: column;
+        }
+
+        .bottom-section .item-section {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .content-main .left-column .content-wrapper {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-main">
+      <div class="header-section">
+        <img src="assets/images/logo.svg" alt="Logo" />
+        <nav>
+          <button onclick="CloseMenu()" class="menu-close">
+            <img src="assets/images/icon-menu-close.svg" />
+          </button>
+          <a href="#">Home</a>
+          <a href="#">New</a>
+          <a href="#">Popular</a>
+          <a href="#">Trending</a>
+          <a href="#">Categories</a>
+        </nav>
+        <div class="menu-button">
+          <button onclick="OpenMenu()" class="menu-button">
+            <img src="assets/images/icon-menu.svg" alt="" />
+          </button>
+        </div>
+      </div>
+      <div class="content-main">
+        <div class="left-column">
+          <img src="assets/images/image-web-3-mobile.jpg" alt="Web 3.0" />
+          <div class="content-wrapper">
+            <h1>The Bright Future of Web 3.0?</h1>
+            <div>
+              <p>
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <h3 class="read-more">READ MORE</h3>
+            </div>
+          </div>
+        </div>
+        <div class="right-column">
+          <h2>New</h2>
+          <div>
+            <h3>Hydrogen VS Electric Cars</h3>
+            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          </div>
+          <hr />
+          <div>
+            <h3>The Downsides of AI Artistry</h3>
+            <p>
+              What are the possible adverse effects of on-demand AI image
+              generation?
+            </p>
+          </div>
+          <hr />
+          <div>
+            <h3>Is VC Funding Drying Up?</h3>
+            <p>
+              Private funding by VC firms is down 50% YOY. We take a look at
+              what that means.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-section">
+        <div class="item-section">
+          <img src="assets/images/image-retro-pcs.jpg" alt="Retro PCs" />
+          <div class="item-content">
+            <h1>01</h1>
+            <h2>Reviving Retro PCs</h2>
+            <p>What happens when old PCs are given modern upgrades?</p>
+          </div>
+        </div>
+        <div class="item-section">
+          <img src="assets/images/image-top-laptops.jpg" alt="Top Laptops" />
+          <div class="item-content">
+            <h1>02</h1>
+            <h2>Top 10 Laptops of 2022</h2>
+            <p>Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class="item-section">
+          <img
+            src="assets/images/image-gaming-growth.jpg"
+            alt="Gaming Growth"
+          />
+          <div class="item-content">
+            <h1>03</h1>
+            <h2>The Growth of Gaming</h2>
+            <p>How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const navBar = document.querySelector("nav");
+      const menuOpen = document.getElementById("menu-button");
+      const menuClose = document.getElementById("menu-close");
+      function OpenMenu() {
+        navBar.classList.add("open-nav");
+      }
+      function CloseMenu() {
+        navBar.classList.remove("open-nav");
+      }
+    </script>
+  </body>
+</html>
